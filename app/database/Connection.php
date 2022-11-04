@@ -19,7 +19,7 @@ class Connection
                 return static::$pdo;
             }
             //Caso a conexão com banco de dados não exista criamos, uma nova conexão.
-            static::$pdo = new PDO("pgsql:host=db-mvc;port=5432;dbname=database;user=postgres;password=postgres");
+            static::$pdo = new PDO("pgsql:host=db;port=5432;dbname=database;user=postgres;password=postgres");
             //Caso seja bem-sucedida a conexão retornamos a variável $pdo;
             return static::$pdo;
         } catch (PDOException $e) {
