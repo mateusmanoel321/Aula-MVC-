@@ -4,18 +4,19 @@
 //use Slim\Factory\AppFactory;
 
 use app\database\models\Veiculos;
+use app\database\models\Proprietario;
 
 require "../vendor/autoload.php";
 
 $veiculos = new Veiculos();
-$fieldAndValuesCreate = [
+$v_fieldAndValuesCreate = [
         "ano" => "1995",
         "valor" => 22.124,
         "chassi" => "AFA5265FAGD",
         "placa" => "ASA-545"
 ];
 
-$fieldAndValuesUpdate =[
+$v_fieldAndValuesUpdate =[
     "fields" => [
         "ano" => "1970",
         "valor" => 14.564,
@@ -28,8 +29,34 @@ $fieldAndValuesUpdate =[
     ]
 ];
 
-$veiculos->create($fieldAndValuesCreate);
-$veiculos->update($fieldAndValuesUpdate);
+$veiculos->create($v_fieldAndValuesCreate);
+$veiculos->update($v_fieldAndValuesUpdate);
+
+$proprietario = new Proprietario();
+
+$p_fieldsAndValuesCreate = [
+        "nome" => "Fulano",
+        "sobrenome" => "Fulano",
+        "cpf" => "100.000.000-00",
+        "rg" => "100000-0",
+        "cnh" => "10000000"
+];
+
+$p_fieldsAndValuesUpdate = [
+    "fields" => [
+        "nome" => "Ciclano",
+        "sobrenome" => "Beltrano",
+        "cpf" => "000.000.000-00",
+        "rg" => "000000-0",
+        "cnh" => "00000000"
+    ],
+    "where" => [
+        "id" => 1
+    ]
+];
+
+$proprietario->create($p_fieldsAndValuesCreate);
+$proprietario->update($p_fieldsAndValuesUpdate);
 
 /*$app = AppFactory::create();
 $app->addRoutingMiddleware();
