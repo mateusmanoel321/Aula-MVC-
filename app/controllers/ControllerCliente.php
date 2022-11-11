@@ -3,9 +3,11 @@
 namespace app\controllers;
 
 use app\database\models\Cliente;
+use app\traits\Read;
 
 class ControllerCliente extends Base
 {
+    use Read;
     private $cliente;
     public function __construct()
     {

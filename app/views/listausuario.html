@@ -6,7 +6,7 @@
     <div class="container-fluid">
         <div class="row mb-2">
             <div class="col-sm-6">
-                <h1 class="m-0">Listagem de cliente</h1><br>
+                <h1 class="m-0">Listagem de usuario</h1><br>
             </div>
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
@@ -52,21 +52,21 @@
                                     </thead>
                                     <tbody>
                                         <!--Items array    Array-->
-                                        {% for clientes in clientes %}
-                                        <tr id="tr{{clientes.id}}">
-                                            <td>{{clientes.id}}</td>
-                                            <td>{{clientes.nome}}</td>
-                                            <td>{{clientes.sobre_nome}}</td>
-                                            <td>{{clientes.cpf}}</td>
+                                        {% for usuario in usuario %}
+                                        <tr id="tr{{usuario.id}}">
+                                            <td>{{usuario.id}}</td>
+                                            <td>{{usuario.nome}}</td>
+                                            <td>{{usuario.sobre_nome}}</td>
+                                            <td>{{usuario.cpf}}</td>
                                             <td>
                                                 <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                                                    <a href="{{ (cadastro ~ '?id=' ~ clientes.id) }}"
+                                                    <a href="{{ (cadastro ~ '?id=' ~ usuario.id) }}"
                                                         class="btn btn-sm btn-warning">
                                                         <i class="fas fa-edit"></i>
                                                         Editar
                                                     </a>
                                                     <button type="button" class="btn btn-sm btn-danger"
-                                                        onclick="ShowModal('{{clientes.id}}');">
+                                                        onclick="ShowModal('{{usuario.id}}');">
                                                         <i class="fas fa-trash"></i>
                                                         Excluir
                                                     </button>

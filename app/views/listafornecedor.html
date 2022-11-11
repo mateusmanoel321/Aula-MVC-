@@ -6,7 +6,7 @@
     <div class="container-fluid">
         <div class="row mb-2">
             <div class="col-sm-6">
-                <h1 class="m-0">Listagem de cliente</h1><br>
+                <h1 class="m-0">Listagem de fornecedor</h1><br>
             </div>
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
@@ -48,25 +48,26 @@
                                             <th>Sobre nome</th>
                                             <th>Cpf</th>
                                             <th>Ação</th>
+                                             
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <!--Items array    Array-->
-                                        {% for clientes in clientes %}
-                                        <tr id="tr{{clientes.id}}">
-                                            <td>{{clientes.id}}</td>
-                                            <td>{{clientes.nome}}</td>
-                                            <td>{{clientes.sobre_nome}}</td>
-                                            <td>{{clientes.cpf}}</td>
+                                        {% for fornecedor in fornecedor %}
+                                        <tr id="tr{{fornecedor.id}}">
+                                            <td>{{fornecedor.id}}</td>
+                                            <td>{{fornecedor.nome}}</td>
+                                            <td>{{fornecedor.sobre_nome}}</td>
+                                            <td>{{fornecedor.cpf}}</td>
                                             <td>
                                                 <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                                                    <a href="{{ (cadastro ~ '?id=' ~ clientes.id) }}"
+                                                    <a href="{{ (cadastro ~ '?id=' ~ fornecedor.id) }}"
                                                         class="btn btn-sm btn-warning">
                                                         <i class="fas fa-edit"></i>
                                                         Editar
                                                     </a>
                                                     <button type="button" class="btn btn-sm btn-danger"
-                                                        onclick="ShowModal('{{clientes.id}}');">
+                                                        onclick="ShowModal('{{fornecedor.id}}');">
                                                         <i class="fas fa-trash"></i>
                                                         Excluir
                                                     </button>
